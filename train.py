@@ -49,7 +49,6 @@ def main():
     data = load_split_of_dataset("sst2", "train")
     data = preprocess_text_data(data, normalize=False)
     dataset = CustomDataset(data)
-    print(dataset[0])
     batch_size = 16
     train_loader = DataLoader(
         dataset, batch_size=batch_size, shuffle=True, collate_fn=dataset.collate_fn
